@@ -233,6 +233,7 @@ jQuery(function (jq) {
             input.checked = true;
         }
     }
+    window.refbrowser_setReference = refbrowser_setReference;
 
     // remove the item for the uid from the reference widget
     function refbrowser_delReference(fieldname, uid) {
@@ -240,6 +241,7 @@ jQuery(function (jq) {
             inputs = jq(selector);
         inputs.closest('li').remove();
     }
+    window.refbrowser_delReference = refbrowser_delReference;
 
     // function to clear the reference field or remove items
     // from the multivalued reference list.
@@ -264,6 +266,7 @@ jQuery(function (jq) {
             jq('#' + widget_id + '_label').attr('value', "");
         }
     }
+    window.refbrowser_removeReference = refbrowser_removeReference;
 
     function refbrowser_moveReferenceUp(self) {
         var elem = self.parentNode,
@@ -310,6 +313,7 @@ jQuery(function (jq) {
         newelem.id = 'ref-' + widget_id + '-' + (pos - 1);
         prevelem.id = 'ref-' + widget_id + '-' + pos;
     }
+    window.refbrowser_moveReferenceUp = refbrowser_moveReferenceUp;
 
     function refbrowser_moveReferenceDown(self) {
         var elem = self.parentNode,
@@ -358,6 +362,7 @@ jQuery(function (jq) {
         newelem.id = 'ref-' + widget_id + '-' + (pos + 1);
         nextelem.id = 'ref-' + widget_id + '-' + pos;
     }
+    window.refbrowser_moveReferenceDown = refbrowser_moveReferenceDown;
 
     function showMessage(messageId, text) {
         var template = jq(messageId).parent(),
